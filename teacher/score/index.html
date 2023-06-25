@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Teacher Score
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/vendor/perfect-scrollbar/css/perfect-scrollbar.css">
+    <!-- CSS for this page only -->
+    <link rel="stylesheet" href="/vendor/chart.js/dist/Chart.min.css">
+
+    <!-- End CSS  -->
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap-override.min.css">
+    <link rel="stylesheet" id="theme-color" href="/assets/css/dark.min.css">
+    <link rel="stylesheet" href="/vendor/jquery-ui/jquery-ui.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header-navbar fixed">
+            <div class="toggle-mobile action-toggle"><i class="fas fa-bars"></i></div>
+            <div class="header-wrapper">
+                <div class="header-content">
+                    <div class="dropdown dropdown-menu-end">
+                        <a href="#" class="user-dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="label">
+                                <span></span>
+                                <div>Teacher</div>
+                            </div>
+                            <img class="img-user" src="/assets/images/avatar1.png" alt="user" srcset="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+        <!-- Nav -->
+        <nav class="main-sidebar ps-menu">
+            <div class="sidebar-toggle action-toggle">
+                <a href="#">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+            <div class="sidebar-opener action-toggle">
+                <a href="#">
+                    <i class="ti-angle-right"></i>
+                </a>
+            </div>
+            <div class="sidebar-header">
+                <div class="text">Teacher</div>
+                <div class="close-sidebar action-toggle">
+                    <i class="ti-close"></i>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <ul>
+                    <li class="">
+                        <a href="/teacher/dashboard" class="link">
+                            <i class="ti-home"></i>
+                            <span>Dasbor</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/teacher/material/" class="link">
+                            <i class="ti-book"></i>
+                            <span>Materi</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/teacher/schedule/" class="link">
+                            <i class="ti-notepad"></i>
+                            <span>Jadwal</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/teacher/presence/" class="link">
+                            <i class="ti-timer"></i>
+                            <span>Riwayat Presensi</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/teacher/task" class="link">
+                            <i class="ti-book"></i>
+                            <span>Tugas</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="/teacher/score/" class="link">
+                            <i class="ti-cup"></i>
+                            <span>Nilai</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="/teacher/pass/" class="link">
+                            <i class="ti-bar-chart"></i>
+                            <span>Siswa Lulus</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="link">
+                            <i class="ti-power-off"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Nav -->
+        <!-- Content -->
+        <div class="main-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card border-0 shadow rounded">
+                        <div class="card-body">
+                            <a href="/teacher/score/create/" class="btn btn-md btn-success mb-3">
+                                Tambah Nilai
+                            </a>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Nama Tugas</th>
+                                        <th scope="col">Nama Siswa</th>
+                                        <th scope="col">Kelas</th>
+                                        <th scope="col">Tanggal Deadline</th>
+                                        <th scope="col">Nilai</th>
+                                        <th scope="col">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Tugas Intro Basic</td>
+                                        <td>Siswa 1</td>
+                                        <td>Basic</td>
+                                        <td>2023-06-23 09:20:55</td>
+                                        <td>90</td>
+                                        <td class="text-center">
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                action="/teacher/score/" method="GET">
+                                                <a href="/teacher/score/edit/"
+                                                    class="btn btn-sm btn-primary">Edit</a>
+                                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Content -->
+        <!-- Setting -->
+        <div class="settings">
+            <div class="settings-icon-wrapper">
+                <div class="settings-icon">
+                    <i class="ti ti-settings"></i>
+                </div>
+            </div>
+        </div>
+        <!-- End Setting -->
+        <div class="overlay action-toggle">
+        </div>
+    </div>
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/vendor/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+    <!-- js for this page only -->
+    <script src="/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="/assets/js/page/index.js"></script>
+    <!-- ======= -->
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
