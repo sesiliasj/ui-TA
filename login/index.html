@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>Turkish Course Login</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/build/assets/app-7cb8b7ce.css">
+    <script src="/build/assets/app-e5a20cd9.js"></script>
+</head>
+
+<body class="font-sans text-gray-900 antialiased">
+    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+        <div style="background-color:#0d6efd; border-radius: 20px; border: 2px solid black;">
+            <a href="/">
+                <img src="/lp/assets/images/logo/logot.png" alt="" width="150" class="me-4">
+            </a>
+        </div>
+
+        <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <form method="GET" action="/">
+                <div>
+                    <label class="block font-medium text-sm text-gray-700">
+                        Email
+                    </label>
+                    <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" type="text">
+                </div>
+                <!-- Password -->
+                <div class="mt-4">
+                    <label class="block font-medium text-sm text-gray-700">
+                        Password
+                    </label>
+                    <input class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm block mt-1 w-full" type="password">
+                </div>
+                <div class="flex items-center justify-end mt-4">
+                    <button type="submit" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150 ml-3">
+                        Log in
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
